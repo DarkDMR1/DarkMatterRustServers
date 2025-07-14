@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DarkMatterRusrServers#Stats</title>
+    <head>
+    <style>
+          @font-face {
+            font-family: 'mycustomfont';
+            src: url(mycustomfont1.woff);
+        }
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            color: white;
+            font-family: 'mycustomfont', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        #page1 {
+            width: 100%;
+             min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-repeat: no-repeat;
+            object-fit: cover;
+            overflow: hidden;
+        }
+         .nav-bar{
+            background-color: #0f0c29;
+            height:4rem;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom:3rem;
+            width:100%;
+            padding:9px;
+            font-weight: 900;
+            z-index: 9999;
+            position: fixed;
+        }
+          canvas#particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            font-size: larger;
+        }
+         .a1:hover{
+            color:#9900ff;
+            transform: scale(1.01);
+            transition: 0.3s ease;
+                        
+        }
+          .cta{
+            margin: left auto;
+            margin-right:2rem;
+             background: linear-gradient( to left,rgb(102, 9, 209),rgb(224, 8, 224));
+            background-size: cover;
+            border-radius: 10px;
+            padding:5px;
+            width:70px;
+            font-weight: 900;
+            font-size: 18px;
+        }
+         .cta:hover{
+         transform: scale(1.05);
+         transition: 0.5s ease;
+           box-shadow: 0 0 6px rgb(0, 183, 255), 
+                        0 0 6px rgb(228, 5, 228),
+         }
+        .img1{
+           border-radius: 50%;
+            width:2.5rem;
+            margin-right:0px;
+            margin-left: 20px;
+        }
+          .title {
+            font-size: 80px;
+            font-weight: 800;
+            background: linear-gradient(45deg, rgb(255, 254, 255), rgb(255, 255, 255));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 auto;
+            margin-top: 10rem;
+        }
+        .desc{
+            margin:0 auto;
+            font-size: 24px;
+            color:rgba(255, 255, 255, 0.514);
+        }
+        .status-title{
+            font-weight: 600;
+            font-size: 30px;
+        }
+        .status-card{
+            border-radius: 10px;
+            background:linear-gradient(to left, rgba(161, 207, 161, 0.877), rgba(211, 195, 195, 0.822));
+            width:70%;
+            margin:0 auto;
+            padding:10px;
+            margin-top: 20px;
+             align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .title-icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+         .title-icon2{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            text-align: left;
+
+        }
+          .icon{
+            width:2rem;
+            margin:0 auto;
+            background:linear-gradient(to left,rgba(255, 255, 255, 0.589), rgba(236, 230, 230, 0.603));
+            border-radius: 10px;
+            padding:5px;
+            margin-right:20px;
+            margin-top: 35px;
+        }
+        .img-icon{
+            text-align: center;
+            margin:0;
+        }
+        .display-flex{
+            display: flex;
+            margin:0 auto; 
+            text-align: center;
+            justify-content: center;
+            margin-left:22rem;
+            margin-top: -2.8rem;
+             align-items: center;
+             gap:10px;
+        }
+        .dot{
+            background:linear-gradient(to left, rgb(92, 228, 92), rgb(9, 197, 9));
+            border-radius: 50%;
+            width:15px;
+            height:15px;
+        }
+        .online{
+            border:3px solid rgb(14, 241, 14);
+            border-radius: 30px;
+            padding:2px;
+            width:13%;
+            height: fit-content;
+            color:rgb(255, 255, 255);
+            font-weight: 800;
+            font-size: 14px;
+            background-color: rgb(97, 245, 97);
+        }
+        .ip{
+            font-size: 20px;
+            color:rgba(240, 255, 255, 0.637);
+        }
+        .center{
+           justify-content: center;
+           text-align: left;
+           align-items: center;
+           margin-right:2rem;
+        }
+        .stats-cards{
+            margin-top: 40px;
+            display: flex;
+            gap:50px;
+            margin-left: auto;
+            margin-left: 17.4rem;
+            
+        }
+        .stats-card1{
+           background:linear-gradient(to left, rgba(161, 207, 161, 0.877), rgba(211, 195, 195, 0.822));
+           border-radius: 10px;
+           width:40%;
+        }
+        .stats-header{
+            font-size: 27px;
+            font-weight: 800;
+             margin:0;
+             margin-bottom: 5px;
+        }
+        .icon2{
+            background:linear-gradient(to left, rgb(27, 27, 27),rgb(46, 44, 44));
+             width:3.8rem;
+            margin:0 auto;
+            border-radius: 10px;
+            padding:5px;
+            margin-right: 1rem;
+            margin-top: 3rem;
+            margin-left: 2rem;
+        }
+        .server-uptime-desc{
+            margin:0 auto;
+            font-weight: 900;
+            font-size: 40px;
+            color:rgba(19, 172, 88, 0.712);
+            text-align: left;
+            margin-left: 8rem;
+            margin-top: -50px;
+            margin-bottom: 20px;
+        }
+        .stats-card2{
+           background:linear-gradient(to right, rgba(212, 113, 32, 0.877), rgba(255, 255, 255, 0.822));
+           border-radius: 10px;
+           width:40%;
+        }
+        .wipe-desc{
+             margin:0 auto;
+            font-weight: 900;
+            font-size: 40px;
+            color:rgb(165, 74, 0);
+           text-align: left;
+             margin-left: 8rem;
+            margin-top: -50px;
+            margin-bottom: 20px;
+        }
+           .stats-card3{
+           background:linear-gradient(to left, rgba(227, 16, 235, 0.877), rgba(255, 255, 255, 0.822));
+           border-radius: 10px;
+           width:40%;
+        }
+        .next-wipe-desc{
+             margin:0 auto;
+            font-weight: 900;
+            font-size: 40px;
+            color:rgba(130, 1, 156, 0.836);
+           text-align: left;
+            margin-left: 8rem;
+            margin-top: -50px;
+            margin-bottom: 20px;
+        }
+            .stats-card4{
+           background:linear-gradient(to right, rgba(9, 143, 253, 0.877), rgba(255, 255, 255, 0.822));
+           border-radius: 10px;
+           width:40%;
+        }
+        .map-desc{
+             margin:0 auto;
+            font-weight: 900;
+            font-size: 40px;
+            color:rgb(3, 76, 160);
+            text-align: left;
+            margin-left: 8rem;
+            margin-top: -50px;
+        }   
+       @media (min-width:1px) and (max-width:480px){
+        
+                    .nav-bar{
+                width: 99.9%;
+                margin: 0 auto;
+                     margin-bottom: 3rem;
+               }
+               .a1{
+                margin-left: 5px;
+                margin-right: 5px;
+               }
+             .cta{
+            margin-right: 1.3rem;
+           }
+           .img1{
+            display: none;
+           }
+            .title{
+                font-size: 43px;
+                     margin-top: 3rem;
+                margin-bottom: 0.4rem;
+            }
+            .status-card{
+                width:90%;
+            }
+            .display-flex{
+                margin-left: 2rem;
+            }
+            .online{
+                display: none;
+            }
+            .dot{
+                display: none;
+            }
+            .stats-cards{
+            margin-top: 40px;
+            display: flex;
+            gap:50px;
+            margin-left: auto;
+            margin-left: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            }
+            .stats-card1{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card2{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card3{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card4{
+                width:90%;
+                 text-align: center;
+                 margin-bottom: 20px;
+            }
+            .icon2{
+                display: none;
+            }
+            .stats-header{
+                     margin-bottom: 0.5rem;
+                margin-top: 1rem;
+            }
+            .fix{
+                margin:0;
+            }
+             .title-icon2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+      .map-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        } 
+         .next-wipe-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .server-uptime-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .wipe-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 15px;
+        }
+          .title{
+            margin-top: 8rem;
+           }
+       }
+        @media (min-width:480px) and (max-width:768px){
+               .nav-bar{
+                width: 99.2%;
+                margin: 0 auto;
+               }
+               .a1{
+                margin-left: 2px;
+                margin-right: 2px;
+               }
+             .cta{
+            margin-right: 0.8rem;
+           }
+            .title{
+                font-size: 80px;
+                     margin-top: 3rem;
+                margin-bottom: 0.4rem;
+            }
+            .status-card{
+                width:90%;
+            }
+            .display-flex{
+                margin-left: 2rem;
+            }
+            .online{
+                display: none;
+            }
+            .dot{
+                display: none;
+            }
+            .stats-cards{
+            margin-top: 40px;
+            display: flex;
+            gap:50px;
+            margin-left: auto;
+            margin-left: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            }
+            .stats-card1{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card2{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card3{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card4{
+                width:90%;
+                 text-align: center;
+                 margin-bottom: 20px;
+            }
+            .icon2{
+            display: none;
+            }
+            .stats-header{
+                    margin-bottom: 0.5rem;
+                margin-top: 1rem;
+            }
+            .fix{
+                margin:0;
+            }
+           .map-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        } 
+         .next-wipe-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .server-uptime-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .wipe-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 15px;
+        }
+        .icon{
+            margin-bottom: 30px;
+        }
+          .title-icon2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+          .title{
+            margin-top: 8rem;
+           }
+    }
+       @media (min-width:768px) and (max-width:1850px){
+               .nav-bar{
+                width: 99.2%;
+                margin: 0 auto;
+               }
+               .a1{
+                margin-left: 2px;
+                margin-right: 2px;
+               }
+             .cta{
+            margin-right: 0.8rem;
+           }
+            .title{
+                font-size: 80px;
+                     margin-top: 3rem;
+                margin-bottom: 0.4rem;
+            }
+            .status-card{
+                width:90%;
+            }
+            .display-flex{
+                margin-left: 2rem;
+            }
+            .online{
+                display: none;
+            }
+            .dot{
+                display: none;
+            }
+            .stats-cards{
+            margin-top: 40px;
+            display: flex;
+            gap:50px;
+            margin-left: auto;
+            margin-left: 0;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            }
+            .stats-card1{
+                  width:90%;
+                 text-align: center;
+            }
+            .stats-card2{
+                width:90%;
+                 text-align: center;
+            }
+            .stats-card3{
+                  width:90%;
+                 text-align: center;
+            }
+            .stats-card4{
+                 width:90%;
+                 text-align: center;
+                 margin-bottom: 20px;
+            }
+            .stats-header{
+                margin-bottom: 0.5rem;
+                margin-top: 1rem;
+            }
+            .fix{
+                margin:0;
+            }
+              .map-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        } 
+         .next-wipe-desc{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .server-uptime-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .wipe-desc{
+             text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            margin-bottom: 15px;
+        }
+        .icon{
+            margin-bottom: 30px;
+        }
+        .icon2{
+            display: none;
+        }
+          .title-icon2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+          .title{
+            margin-top: 8rem;
+           }
+    }
+    @media (min-width:1950px){
+      .stats-cards{
+        margin-left: 18.9rem;
+      }
+    }
+    .status-card:hover{ 
+        box-shadow:  0 0 10px rgb(6, 202, 6),
+        0 0 10px rgb(6, 202, 6),
+        0 0 10px rgb(6, 202, 6) ;
+        transform: scale(1.02);
+        transition: 0.5s ease;
+    }
+    .stats-card1:hover{
+        box-shadow:  0 0 10px rgb(6, 202, 6),
+        0 0 10px rgb(6, 202, 6),
+        0 0 10px rgb(6, 202, 6) ;
+        transform: scale(1.02);
+        transition: 0.5s ease;
+    }
+     .stats-card2:hover{
+        box-shadow:  0 0 10px rgb(236, 128, 3),
+        0 0 10px rgb(248, 183, 3),
+        0 0 10px rgb(250, 150, 0) ;
+        transform: scale(1.02);
+        transition: 0.5s ease;
+    }
+      .stats-card3:hover{
+        box-shadow:  0 0 10px rgb(189, 3, 236),
+        0 0 10px rgb(197, 6, 223),
+        0 0 10px rgb(171, 0, 250) ;
+        transform: scale(1.02);
+        transition: 0.5s ease;
+    }
+      .stats-card4:hover{
+        box-shadow:  0 0 10px rgb(3, 209, 236),
+        0 0 10px rgb(3, 150, 248),
+        0 0 10px rgb(3, 174, 204) ;
+        transform: scale(1.02);
+        transition: 0.5s ease;
+    }
+    
+
+           
+    </style>
+    </head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <section id="page1">
+           <div class="nav-bar">
+           <img class="img1" src="D%M.png" alt="logo">
+            <a class="a1" href="index.html">Home</a>
+            <a class="a1" href="stats.html">Stats</a>
+            <a class="a1" href="rules.html">Rules</a>
+            <div class="cta">
+                    <a href="https://darkmatterrust.tebex.io/" target="_blank">Store</a>
+            </div>
+        </div>
+        <h1 class="title">Server Statistics</h1>
+        <p class="desc">server information and performance metrics</p>
+        <div class="status-card">
+            <div class="center">
+            <div class="title-icon">
+                <div class="img-icon">
+                <img class="icon" src="server.png" alt="server icon">
+                </div>
+            <p class="status-title">Server Status</p>
+            </div>
+            <div class="display-flex">
+            <p class="dot"></p>
+            <p class="online">Online</p>
+            <p class="ip">client.connect 156.236.84.49:28041</p>
+            </div>
+            </div>
+        </div>
+        <div class="stats-cards">
+            <div class="stats-card1">
+                <div class="title-icon2">
+                       <div class="img-icon">
+                    <img class="icon2" src="heartbeat.png" alt="server status icon"/>
+                    </div>
+                    <p class="stats-header">Server Uptime</p>
+                </div>
+                <p class="server-uptime-desc">99.9%</p>
+         </div>
+            <div class="stats-card2">
+                <div class="title-icon2">
+                       <div class="img-icon">
+                    <img class="icon2" src="schedule.png" alt="wipe calander icon"/>
+                    </div>
+                    <p class="stats-header">Last Wipe</p>
+                </div>
+                <p class="wipe-desc">7/11/2025</p>
+            </div>
+            </div>
+             <div class="stats-cards">
+            <div class="stats-card3">
+               <div class="fix">
+                <div class="title-icon2">
+                       <div class="img-icon">
+                    <img class="icon2" src="clock.png" alt="clock icon"/>
+                    </div>
+                    <p class="stats-header">Next Wipe</p>
+                </div>
+                <p class="next-wipe-desc">7/18/2025</p>
+                </div>
+                </div>
+                 <div class="stats-card4">
+                <div class="title-icon2">
+                       <div class="img-icon">
+                    <img class="icon2" src="map (1).png" alt="map icon"/>
+                    </div>
+                    <p class="stats-header">Map Size</p>
+                </div>
+                <p class="map-desc">2500x2500</p>
+                </div>
+         </div>
+            </section>
+        
+    <script>
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+const particleCount = 100; // Adjust for more or fewer bubbles
+const colors = ['#ffffff', '#ccf2ff', '#99e6ff', '#66d9ff']; // white + light blues
+
+// Particle class
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + Math.random() * canvas.height;
+        this.radius = Math.random() * 4 + 1; // Size of bubbles
+        this.speed = Math.random() * 1.5 + 0.5; // Upwards speed
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.opacity = Math.random() * 0.5 + 0.5;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${hexToRgb(this.color)},${this.opacity})`;
+        ctx.fill();
+    }
+    update() {
+        this.y -= this.speed;
+        if (this.y < -this.radius) {
+            this.y = canvas.height + this.radius;
+            this.x = Math.random() * canvas.width;
+        }
+        this.draw();
+    }
+}
+
+// Utility to convert hex to rgb
+function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    let bigint = parseInt(hex, 16);
+    let r = (bigint >> 16) & 255;
+    let g = (bigint >> 8) & 255;
+    let b = bigint & 255;
+    return `${r},${g},${b}`;
+}
+
+// Initialize particles
+function init() {
+    particlesArray = [];
+    for (let i = 0; i < particleCount; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+
+// Animate
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(particle => particle.update());
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
+
+init();
+animate();
+</script>
+    </body>
+    </html>
