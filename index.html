@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DarkMatterRustServers</title>
     <style>
+
         @font-face {
             font-family: 'mycustomfont';
             src: url(mycustomfont1.woff);
         }
+     html {
+    background-color: #0f0c29;
+       }
         html, body {
             margin: 0;
             height: 100%;
@@ -558,14 +562,14 @@
 
 
         }
-        .server-title{
+        .discord-title{
             font-weight: 900;
             font-size: xx-large;
             margin-left:auto;
             margin-left:5px;
             margin:0;
         }
-        .server-card2{
+        .discord-card{
             background:linear-gradient( to left, rgb(214, 203, 203),rgba(194, 179, 189, 0.911));
             border-radius: 10px;
             width:40%;
@@ -588,11 +592,11 @@
             display: flex;
             align-items: center;
         }
-        .server-card-top{
+        .discord-card-top{
             margin: 0;
             margin-bottom:20px;
         }
-        .server-desc{
+        .discord-desc{
             font-size: larger;
             font-weight: 600;
             margin:0;
@@ -620,7 +624,7 @@
             justify-content: center;
             width:15rem;
         }
-        .server-card-bottom{
+        .discord-card-bottom{
              text-align: left;
         }
         .btn2:hover{
@@ -694,7 +698,7 @@
         margin-top:4px;
        }
        @media(min-width:1px) and (max-width:480px){
-        .server-card{
+        .discord-card{
             display: flex;
             flex-direction: column;
             width:85%;
@@ -703,10 +707,10 @@
              margin-left: auto;
               margin-right: auto;
         }
-        .server-title{
+        .discord-title{
             text-align: center;
         }
-        .server-desc{
+        .discord-desc{
             text-align: center;
         }
         .items{
@@ -724,7 +728,7 @@
             margin-right: auto;
             width:85%;
         }
-        .server-card{
+        .community-card{
             display:none;
         }
         .info-card2{
@@ -735,7 +739,7 @@
         }
        }
          @media(min-width:480px) and (max-width:768px){
-        .server-card{
+        .discord-card{
             display: flex;
             flex-direction: column;
             width:85%;
@@ -753,10 +757,10 @@
             margin-right: auto;
             width:100%;
         }
-           .server-title{
+           .discord-title{
             text-align: center;
         }
-        .server-desc{
+        .discord-desc{
             text-align: center;
         }
         .items{
@@ -779,7 +783,7 @@
         }
        }
          @media(min-width:768px) and (max-width:1800px){
-        .server-card2{
+        .discord-card{
             width:89.5%;
              align-items: center;
              justify-content: center;
@@ -831,7 +835,7 @@
             transition: 0.5s ease;
                  border-color: #00ff15;
         }
-        .server-card2:hover{
+        .discord-card:hover{
              box-shadow:  0 0 6px rgb(1, 162, 255),
                           0 0 6px rgb(0, 162, 255),
                           0 0 6px rgb(3, 231, 212);
@@ -840,11 +844,7 @@
         .server-card:hover{
        transition: 0.5s ease;
        transform: scale(1.03);
-        
-    }
-    .community-card{
-        margin-top: 10rem;
-    }
+        }
 
 </style>
 </head>
@@ -943,44 +943,47 @@
 
     </section>
     <section id="page3">
-        <h2 class="title2">Join Our Servers</h2>
-        <p class="desc4">Connect with hundreds of player. Experince rust like never before.</p>
+        <h2 class="title2">Join Our Community</h2>
+        <p class="desc4">Connect with hundreds of players, get support, and stay updated with the latest server news.</p>
         <div class="parent-container">
 
 
-        <div class="server-card2">
-            <div class="server-card-top">
+        <div class="discord-card">
+            <div class="discord-card-top">
                 <div class="title-icon">
               <img class="icon7" src="discord.png" alt="discord icon">
-            <p class="server-title">Server</p>
+            <p class="discord-title">Discord Server</p>
             </div>
+            <p class="discord-desc">Over 100 Members</p>
             </div>
-            <div class="server-card-bottom">
+            <div class="discord-card-bottom">
                 <div class="title-icon">
                     <img class="icon3" src="group.png" alt="community icon">
-                <p class="items">Unique Players</p>
+                <p class="items">Active community chat</p>
                 </div>
                 <div class="title-icon">
                     <img class="icon3" src="user-gear.png" alt="admin-icon2">
-                <p class="items">Active Admins</p>
+                <p class="items">Direct admin support</p>
                 </div>
                   <div class="title-icon">
                     <img class="icon3" src="marketing.png" alt="marketing-icon">
-                <p class="items">Server events</p>
+                <p class="items">Server updates & announcements</p>
                 </div>
             </div>
+            <div class="btn2">
+           <a href="https://discord.gg/f4e7y9NP8g" target="_blank">Join Our Discord</a>
            </div>
         </div>
 
 
            <div class="info-cards2">
                 <div class="info-card2 card1">
-                    <p class="card1title">1000+</p>
-                    <p>Lifetime Players</p>
+                    <p class="card1title">100+</p>
+                    <p>Discord Members</p>
                 </div>
                 <div class="info-card2 card2">
                     <p class="card2title">24/7</p>
-                    <p>Active Admins</p>
+                    <p>Staff Support</p>
                 </div>
                 </div>
 
@@ -1074,4 +1077,5 @@
     </script>
 </body>
 </html>
+
 
